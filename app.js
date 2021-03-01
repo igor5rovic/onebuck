@@ -22,7 +22,7 @@ var adminRouter = require('./routes/adminRoutes');
 var app = express();
 
 //ako deploy na heroku
-//app.enable('trust proxy');
+app.enable('trust proxy');
 
 //za cors, jelte, ako je mean aplikacija (sve u jednon aplikaciji) onda nam ne treba cors
 //app.use(cors());
