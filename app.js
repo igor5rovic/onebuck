@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 //var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-//var cors = require('cors');
+var cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
@@ -89,11 +89,11 @@ app.use(hpp());
 //za kompresju
 app.use(compression());
 
-app.use((req,res,next)=>{
+/*app.use((req,res,next)=>{
   console.log(req.headers)
   console.log(req.cookies)
   next()
-})
+})*/
 
 // ova funkcija daje vrednost csrf tokena kao string. onda se dole uporedjuje da li je token dobar. moralo je ovako jer frontend nikako nije hteo da posalje zeljene hedere a salje cookie gde se token nalazi pa smo ga odatle i izvukli
 /*function getXSRFTOKENValue(req){
