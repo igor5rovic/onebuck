@@ -78,9 +78,15 @@ exports.checkUsername = async (req, res, next) => {
 };*/
 
 exports.signup = catchAsync(async (req, res, next) => {
+  //ovaj deo nije morao zato sto ne frontendu proveravamo da li je username slobodan ili vec postoji pomocu checkUsername fje iz ovog fajla
+  /*
   const user = await User.findOne({ username: req.body.username });
   if (user) {
     return next(new AppError('Username taken', 401));
+  }*/
+  const user = await User.findOne({ email: req.body.email });
+  if (user) {
+    return next(new AppError('Email already in use', 401));
   }
   const newUser = await User.create({
     username: req.body.username,
