@@ -5,7 +5,8 @@ const handleCastErrorDB = err => {
   return new AppError(message, 400);
 };
 
-const handleDuplicateFieldsDB = err => {
+const handleDuplicateFieldsDB = err => {//FIXME: ne radi ni ovo, za sada ne prolazi jer su pre toga zamke da se uhvati da li vec postoji vrednost koju pokusavamo da sacuvamo u bazi za polja koja bi trebalio da budu unique
+  console.log(err.errmsg)
   const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
 
   const message = `Duplicate field value: ${value}. Please use another value!`;
@@ -84,7 +85,7 @@ const sendErrorProd = (err, req, res) => {
 
 module.exports = (err, req, res, next) => {
   // console.log(err.stack);
-
+  console.log(err.name, err.code)
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
   
@@ -92,14 +93,19 @@ module.exports = (err, req, res, next) => {
     sendErrorDev(err, req, res);
   } else if (process.env.NODE_ENV === 'production') {
     let error = { ...err };
+    
     error.message = err.message;
-
-    if (error.name === 'CastError') error = handleCastErrorDB(error);
+    /***** ove dole zajebancije radimo da bi error bio operational i da bi imali dobar error handling u vezi toga da nam ne izbaci greska je u serveru kada na primer imamo zauzeti mejl ili slicno******/
+    //if (error.name === 'CastError') error = handleCastErrorDB(error);
+    if (err.name === 'CastError') error = handleCastErrorDB(error);
     if (error.code === 11000) error = handleDuplicateFieldsDB(error);
-    if (error.name === 'ValidationError')
-      error = handleValidationErrorDB(error);
-    if (error.name === 'JsonWebTokenError') error = handleJWTError();
-    if (error.name === 'TokenExpiredError') error = handleJWTExpiredError();
+    //if (error.name === 'ValidationError') error = handleValidationErrorDB(error);// ovako ne radi jer error objekat koji smo kreirali ne dobija property(ili metod sta li je) name
+    //if (err instanceof mongoose.Error.ValidationError) error = handleValidationErrorDB(error); //moze i ovako nekako
+    if (err.name === 'ValidationError') error = handleValidationErrorDB(error); // evo gde je bila greska, ovako radi
+    //if (error.name === 'JsonWebTokenError') error = handleJWTError(); //FIXME: Da li i ovde treba err.name?
+    if (err.name === 'JsonWebTokenError') error = handleJWTError();
+    //if (error.name === 'TokenExpiredError') error = handleJWTExpiredError();
+    if (err.name === 'TokenExpiredError') error = handleJWTExpiredError();
 
     sendErrorProd(error, req, res);
   }
