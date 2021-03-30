@@ -25,14 +25,14 @@ var app = express();
 app.enable('trust proxy');
 
 //za cors, jelte, ako je mean aplikacija (sve u jednon aplikaciji) onda nam ne treba cors
-//app.use(cors());
+app.use(cors());
 //app.use(cors({origin: 'http://localhost:4200', credentials: true})); //nece da sacuva cookie na browseru kada koristimo angular i zato bi morali ovako, osim ako nije MEAN u jednoj aplikaciji??? ako je mean u jednoj aplikaciji onda cookies cepaju i bez ovoga. Jos jedna stvar, ako zelimo csrf zastitu bez koriscenja csurf paketa i nekih posebnih aktivnosti necemo uopste ni da koristimo kukije
 // Access-Control-Allow-Origin *
 // api.natours.com, front-end natours.com
 //app.use(cors({
 //   origin: 'https://www.primer.com'
 // }))
-//app.options('*', cors());
+app.options('*', cors());
 // app.options('/api/v1/tours/:id', cors());
 
 // Set security HTTP headers
@@ -60,6 +60,7 @@ app.use('/api', limiter);
 
 if (process.env.NODE_ENV === 'development') {
   app.use(logger('dev'));
+  console.log('development')
 };
 //ogranicena je velicina podataka koju korisnik(frontend) salje
 app.use(express.json({ limit: '10kb' }));

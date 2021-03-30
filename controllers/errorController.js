@@ -6,7 +6,6 @@ const handleCastErrorDB = err => {
 };
 
 const handleDuplicateFieldsDB = err => {//FIXME: ne radi ni ovo, za sada ne prolazi jer su pre toga zamke da se uhvati da li vec postoji vrednost koju pokusavamo da sacuvamo u bazi za polja koja bi trebalio da budu unique
-  console.log(err.errmsg)
   const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
 
   const message = `Duplicate field value: ${value}. Please use another value!`;
@@ -85,14 +84,15 @@ const sendErrorProd = (err, req, res) => {
 
 module.exports = (err, req, res, next) => {
   // console.log(err.stack);
-  console.log(err.name, err.code)
+  //console.log(err.name, err.code)
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
   
   if (process.env.NODE_ENV === 'development') {
     sendErrorDev(err, req, res);
   } else if (process.env.NODE_ENV === 'production') {
-    let error = { ...err };
+    //let error = { ...err };
+    let error = { ...err, errmsg: err.errmsg }; //morao sam da dodam da bi ovo polje postojalo u error-u jer ga koristimo posle u jednoh funkciji gore
     
     error.message = err.message;
     /***** ove dole zajebancije radimo da bi error bio operational i da bi imali dobar error handling u vezi toga da nam ne izbaci greska je u serveru kada na primer imamo zauzeti mejl ili slicno******/
@@ -110,3 +110,19 @@ module.exports = (err, req, res, next) => {
     sendErrorProd(error, req, res);
   }
 };
+
+/*I have ran into the same error once.
+
+Accessing err.name in a mongoose error handling middleware returned undefined.
+
+I found out that err.name will only work if you are using the original err object returned from mongoose.
+
+If you are making a copy of the object by Destructuring it like this:
+
+let error = {...err};
+this won't Include the name property. As a fix you can do this:
+
+let error = {...err, name: err.name};
+and it should work.
+
+Idk why this happen but if anyone knows, please do let me know! Hope this helped you*/ /////sa stack overflow-a
