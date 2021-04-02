@@ -96,12 +96,14 @@ exports.signup = catchAsync(async (req, res, next) => {
     password: req.body.password,
     address: req.body.address,
   });
+/*
   try {
     //FIXME:ovaj deo mi je smunjiv i treba verovatno da se preuredi kao i kod password reseta
     new Email(newUser).sendWelcome(); //ne mora await (da cekamo) jer i nije toliko bitno da li ce stvarno da posalje mejl, da ne bi kocili aplikaciju
   } catch (err) {
     console.log(err);
   }
+*/
   createSendToken(newUser, 201, req, res);
 });
 
@@ -153,7 +155,8 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     )}/api/v1/users/resetPassword/${resetToken}`;*/
     //promenjeno zbog angulara
     //TODO:srediti url za production
-    const resetURL = `${req.protocol}://localhost:4200/user/reset-password/${resetToken}`;
+    //const resetURL = `${req.protocol}://localhost:4200/user/reset-password/${resetToken}`;
+    const resetURL = `https://www.onebuck.store/user/reset-password/${resetToken}`;
     await new Email(user, resetURL).sendPasswordReset();
     res.status(200).json({
       status: 'success',

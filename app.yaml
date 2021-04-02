@@ -1,0 +1,15 @@
+runtime: nodejs14
+
+env_variables:
+  NODE_ENV: "production"
+  MONGO_USER: "Igor"
+  MONGO_PASSWORD: "7yAFr5kaw6R1WpNo"
+  MONGO_DEFAULT_DATABASE: "vezbadb"
+  JWT_SECRET: "my-ultra-secure-and-ultra-long-secret"
+  JWT_EXPIRES_IN: "90d"
+  JWT_COOKIE_EXPIRES_IN: "90"
+  EMAIL_USERNAME: "4b8f5ef2d0b5c9"
+  EMAIL_PASSWORD: "b70a23a5cc8bc5"
+  EMAIL_HOST: "smtp.mailtrap.io"
+  EMAIL_PORT: "2525"
+  EMAIL_FROM: "onebuck@io"
