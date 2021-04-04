@@ -61,11 +61,11 @@ exports.sendContactMessage = catchAsync(async (req, res, next) => {
   //FIXME: sredi ovo ima problema
   console.log(req.body);
   const user = {
-    email: 'maxzwolfz@gmail.com',
-    firstName: 'Igor',
+    email: 'support@onebuck.store',
+    firstName: req.body.msg.email,
   };
   try {
-    await new Email(user).contactMe();
+    await new Email(user, '', req.body.msg.msg).contactMe();
     res.status(200).json({
       status: 'success',
     });

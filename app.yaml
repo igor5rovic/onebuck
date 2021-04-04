@@ -13,3 +13,13 @@ env_variables:
   EMAIL_HOST: "smtp.mailtrap.io"
   EMAIL_PORT: "2525"
   EMAIL_FROM: "onebuck@io"
+  SENDGRID_USERNAME: 'apikey'
+  SENDGRID_PASSWORD: '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'
+  PRIVATEEMAIL_USER: 'support@onebuck.store'
+  PRIVATEEMAIL_PASS: 'EsiMiDobar.4323'
+
+handlers:
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto

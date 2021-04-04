@@ -2,24 +2,42 @@ const nodemailer = require('nodemailer');
 //const htmlToText = require('html-to-text');
 //TODO: sredi ovaj gore modul
 module.exports = class Email {
-  constructor(user, url) {
+  constructor(user, url, text) {
     this.to = user.email;
     this.firstName = user.firstName;
     this.url = url;
     this.from = `OneBuck Store <${process.env.EMAIL_FROM}>`;
+    this.text = text;
   }
 
   newTransport() {
-    /*if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production') {
       // Sendgrid
-      return nodemailer.createTransport({
+      /*return nodemailer.createTransport({
         service: 'SendGrid',
         auth: {
           user: process.env.SENDGRID_USERNAME,
           pass: process.env.SENDGRID_PASSWORD
+        },
+        tls: {
+          // do not fail on invalid certs
+          rejectUnauthorized: false
+        }
+      });*/
+      return nodemailer.createTransport({
+        host: "mail.privateemail.com",
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.PRIVATEEMAIL_USER,
+          pass: process.env.PRIVATEEMAIL_PASS
+        },
+        tls: {
+          // do not fail on invalid certs
+          rejectUnauthorized: false
         }
       });
-    }*/
+    }
     //jos ne radim sa sendgrid
 
     return nodemailer.createTransport({
@@ -61,11 +79,12 @@ module.exports = class Email {
     //test test test
     if(template === 'contact'){
       html = `
-    <p>Hello mr. ${this.firstName}</p>
+    <p>Hello mr. Petrovic</p>
     <p>'Someoune contacted you from OneBuck.store website!'</p>
+    <p>Sender email: ${this.firstName}</p>
     <p>Here you can see the message:<p>
     <p>
-      Nekako da dodamo jos text poruke
+      ${this.text}
     </p>
     <p>Best regards!</p>
     <p>OneBuck.store team</p>
