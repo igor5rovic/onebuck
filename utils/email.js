@@ -13,7 +13,7 @@ module.exports = class Email {
   newTransport() {
     if (process.env.NODE_ENV === 'production') {
       // Sendgrid
-      /*return nodemailer.createTransport({
+      return nodemailer.createTransport({
         service: 'SendGrid',
         auth: {
           user: process.env.SENDGRID_USERNAME,
@@ -23,8 +23,8 @@ module.exports = class Email {
           // do not fail on invalid certs
           rejectUnauthorized: false
         }
-      });*/
-      return nodemailer.createTransport({
+      });
+      /*return nodemailer.createTransport({
         host: "mail.privateemail.com",
         port: 587,
         secure: false,
@@ -36,7 +36,7 @@ module.exports = class Email {
           // do not fail on invalid certs
           rejectUnauthorized: false
         }
-      });
+      });*/
     }
     //jos ne radim sa sendgrid
 
