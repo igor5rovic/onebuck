@@ -1,7 +1,9 @@
 const User = require('../models/user');
 const Sale = require('../models/sale');
 const catchAsync = require('../utils/catchAsync');
-const Email = require('./../utils/email');
+//const Email = require('./../utils/email');
+
+const { sendContactMessageEmail } = require('../utils/email-sgMail');
 
 //const stripe = require('stripe')('sk_test_isrGxOT6eU6k9gJIBzn7Npk000m0Ty65SD');
 
@@ -65,7 +67,8 @@ exports.sendContactMessage = catchAsync(async (req, res, next) => {
     firstName: req.body.msg.email,
   };
   try {
-    await new Email(user, '', req.body.msg.msg).contactMe();
+    //await new Email(user, '', req.body.msg.msg).contactMe();
+    await sendContactMessageEmail(req.body.msg.msg, req.body.msg.email);
     res.status(200).json({
       status: 'success',
     });

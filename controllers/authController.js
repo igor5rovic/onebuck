@@ -3,8 +3,10 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
-const Email = require('./../utils/email');
+//const Email = require('./../utils/email');
 //FIXME: Srediti email.js fajl da radi kako treba
+
+const { sendPasswordReset } = require('../utils/email-sgMail');
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -157,12 +159,14 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     //TODO:srediti url za production
     //const resetURL = `${req.protocol}://localhost:4200/user/reset-password/${resetToken}`;
     const resetURL = `https://www.onebuck.store/user/reset-password/${resetToken}`;
-    await new Email(user, resetURL).sendPasswordReset();
+    //await new Email(user, resetURL).sendPasswordReset();
+    await sendPasswordReset(user.email, resetURL);
     res.status(200).json({
       status: 'success',
       message: 'Token sent to email!',
     });
   } catch (err) {
+    console.log(err)
     user.passwordResetToken = undefined;
     user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
