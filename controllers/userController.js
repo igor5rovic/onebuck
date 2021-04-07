@@ -73,7 +73,7 @@ exports.sendContactMessage = catchAsync(async (req, res, next) => {
       status: 'success',
     });
   } catch (err) {
-    console.log(err);
+    console.log('sendContactMessage kontroler', err)
   }
 });
 
