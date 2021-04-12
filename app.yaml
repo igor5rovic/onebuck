@@ -17,6 +17,7 @@ env_variables:
   SENDGRID_PASSWORD: "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"
   PRIVATEEMAIL_USER: "support@onebuck.store"
   PRIVATEEMAIL_PASS: "EsiMiDobar.4323"
+  SENDGRID_API_KEY: "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"
 
 handlers:
 - url: /.*
