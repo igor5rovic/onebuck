@@ -3,7 +3,8 @@ const Sale = require('../models/sale');
 const catchAsync = require('../utils/catchAsync');
 //const Email = require('./../utils/email');
 
-const { sendContactMessageEmail } = require('../utils/email-sgMail');
+//const { sendContactMessageEmail } = require('../utils/email-sgMail');
+const { sendContactMessageEmail } = require('../utils/email-mailjet');
 
 //const stripe = require('stripe')('sk_test_isrGxOT6eU6k9gJIBzn7Npk000m0Ty65SD');
 
@@ -61,7 +62,7 @@ exports.setWishlistProduct = async (req, res, next) => {
 
 exports.sendContactMessage = catchAsync(async (req, res, next) => {
   //FIXME: sredi ovo ima problema
-  console.log(req.body);
+  //console.log(req.body);
   const user = {
     email: 'support@onebuck.store',
     firstName: req.body.msg.email,

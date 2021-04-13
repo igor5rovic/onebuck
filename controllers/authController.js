@@ -6,7 +6,8 @@ const catchAsync = require('../utils/catchAsync');
 //const Email = require('./../utils/email');
 //FIXME: Srediti email.js fajl da radi kako treba
 
-const { sendPasswordReset } = require('../utils/email-sgMail');
+//const { sendPasswordReset } = require('../utils/email-sgMail');
+const { sendPasswordReset } = require('../utils/email-mailjet');
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
