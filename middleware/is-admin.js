@@ -40,7 +40,7 @@ module.exports = async (req, res, next) => {
     if (!currentUser) {
       return next(
         new AppError(
-          'The user belonging to this token does no longer exist.',
+          'The user belonging to this token does no longer exists.',
           401
         )
       );
@@ -54,7 +54,7 @@ module.exports = async (req, res, next) => {
     // GRANT ACCESS TO PROTECTED Admin ROUTE
     if(currentUser.role !== 'admin') {
       return next(
-        new AppError('You are not admin!', 401)
+        new AppError('You are not an admin!', 401)
       );
     }
 

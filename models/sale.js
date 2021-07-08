@@ -61,7 +61,7 @@ const saleSchema = new Schema(
     },
     currentPoints: {
       type: Number,
-      required: [true, 'Sale must hve current points'],
+      required: [true, 'Sale must have current points'],
       min: [0, 'Can not be negative number'],
     },
     emailToWinnerSent: {

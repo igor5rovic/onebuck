@@ -60,7 +60,7 @@ module.exports = class Email {
     if(template === 'passwordReset'){
       html = `
     <p>You have requested password reset on onebuck.store</p>
-    <p>Please follow next link and enter new password</p>
+    <p>Please follow the next link and enter a new password</p>
     <p>Hope to see you soon, best regards!</p>
     <a href="${this.url}">click here</a>
     `;
@@ -80,7 +80,7 @@ module.exports = class Email {
     if(template === 'contact'){
       html = `
     <p>Hello mr. Petrovic</p>
-    <p>'Someoune contacted you from OneBuck.store website!'</p>
+    <p>'Someone contacted you from OneBuck.store website!'</p>
     <p>Sender email: ${this.firstName}</p>
     <p>Here you can see the message:<p>
     <p>

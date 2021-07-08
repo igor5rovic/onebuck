@@ -158,7 +158,7 @@ exports.buyProduct = async (req, res, next) => {
     }
     const sale = await Sale.findOne({ _id: saleId }).select('+forbiddenUser');
     if (sale.open === false) {
-      return next(new AppError('Sale is closed You can not add points!', 400));
+      return next(new AppError('The sale is closed! You can not add points!', 400));
     }
     newPoints = req.user.points - points;
     const updatedUser = await User.findOneAndUpdate(
@@ -238,7 +238,7 @@ exports.getProduct = async (req, res, next) => {
 exports.productSearch = (req, res, next) => {
   const searchTxt = req.body.productSearchTxt.toLowerCase();
   if (!validator.isAlphanumeric(searchTxt)) {
-    return next(new AppError('That kind of search text is forbidden, please use letters and numbers', 404));
+    return next(new AppError('That kind of text search is forbidden, please use letters and numbers', 404));
   }
   /*Product.find({$text: {$search: searchTxt}}).then(
     products => {

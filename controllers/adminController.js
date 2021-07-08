@@ -283,7 +283,7 @@ exports.deleteSale = async (req, res, next) => {
     }
     const doc = await Sale.findByIdAndDelete(saleId);
     if (!doc) {
-      return next(new AppError('No document found with that ID', 404));
+      return next(new AppError('No document (Sale) found with that ID', 404));
     }
     res.status(201).json({
       status: 'success',
@@ -473,7 +473,7 @@ exports.deleteUser = catchAsync(async (req, res, next) => {
   if (salesNum > 0) {
     return next(
       new AppError(
-        'Not allowed! Deleting this user may cause app errors beacues this user won some sales!',
+        'Not allowed! Deleting this user may cause app errors because this user won some sales!',
         405
       )
     );

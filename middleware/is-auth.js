@@ -40,7 +40,7 @@ module.exports = async (req, res, next) => {
     if (!currentUser) {
       return next(
         new AppError(
-          'The user belonging to this token does no longer exist.',
+          'The user belonging to this token does no longer exists.',
           401
         )
       );

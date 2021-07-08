@@ -30,12 +30,12 @@ const sendPasswordReset = (email, url) => {
         from: 'andrew@mead.io', // nas email koji smo registovali za domen/vebsajt
         subject: 'Your password reset token (valid for only 10 minutes)',
         text: `You have requested password reset on onebuck.store;
-        Please follow next link and enter new password.
+        Please follow the next link and enter a new password.
         Hope to see you soon, best regards!
         <a href="${url}">click here</a>`,
         html: `
         <p>You have requested password reset on onebuck.store</p>
-        <p>Please follow next link and enter new password</p>
+        <p>Please follow the next link and enter a new password</p>
         <p>Hope to see you soon, best regards!</p>
         <a href="${this.url}">click here</a>
         `
@@ -48,14 +48,14 @@ const sendContactMessage = (name) => {
         from: 'pera@zdera.io', //ovde treba veze nemam sta, da li isti
         subject: 'Somebody Contacted You on OneBuck.store!',
         text: ` Hello mr. ${name}.
-        Someoune contacted you from OneBuck.store website!
+        Someone contacted you from OneBuck.store website!
         Here you can see the message:
           Nekako da dodamo jos text poruke
         Best regards!
         OneBuck.store team`,
         html:`
         <p>Hello mr. ${this.firstName}</p>
-        <p>'Someoune contacted you from OneBuck.store website!'</p>
+        <p>'Someone contacted you from OneBuck.store website!'</p>
         <p>Here you can see the message:<p>
         <p>
           Nekako da dodamo jos text poruke
