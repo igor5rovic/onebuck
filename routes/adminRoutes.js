@@ -7,7 +7,7 @@ var adminCtrl = require ('../controllers/adminController');
 //const Sale = require('../models/sale');
 
 //ove dole rute nam verovatno nece trebati u produkciji
-router.get('/clear-wishlists', adminCtrl.clearWishlists);
+//router.get('/clear-wishlists', adminCtrl.clearWishlists);
 
 /*router.get('/delete-users', (req,res,next)=>{
   User.deleteMany({role: 'user'}).then(result => {

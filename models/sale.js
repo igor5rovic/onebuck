@@ -10,7 +10,7 @@ var subSchema = mongoose.Schema(
     },
     customerSalePoints: {
       type: Number,
-      require: false,
+      required: false,
     },
   },
   { _id: false }
