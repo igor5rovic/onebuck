@@ -1,0 +1,137 @@
+{
+  "configVersion": 1,
+  "timestamp": 1646951689956,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/246.31f321a51a3fa0b6.js",
+        "/442.28cd23383b03d705.js",
+        "/647.cc80725a8d61449c.js",
+        "/734.992178b334ce711f.js",
+        "/index.html",
+        "/main.2f4958c911b86079.js",
+        "/manifest.webmanifest",
+        "/polyfills.c05a4201037b04b3.js",
+        "/runtime.5d853e4f7205bc82.js",
+        "/styles.93c07fb2a0e874d9.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/favicon-22.png",
+        "/assets/images/favicon.png",
+        "/assets/images/favicon/android-chrome-192x192.png",
+        "/assets/images/favicon/android-chrome-512x512.png",
+        "/assets/images/favicon/apple-touch-icon.png",
+        "/assets/images/favicon/favicon-16x16.png",
+        "/assets/images/favicon/favicon-32x32.png",
+        "/assets/images/favicon/favicon.ico",
+        "/assets/images/favicon/site.webmanifest",
+        "/assets/images/favicon_io (4)/android-chrome-192x192.png",
+        "/assets/images/favicon_io (4)/android-chrome-512x512.png",
+        "/assets/images/favicon_io (4)/apple-touch-icon.png",
+        "/assets/images/favicon_io (4)/favicon-16x16.png",
+        "/assets/images/favicon_io (4)/favicon-32x32.png",
+        "/assets/images/favicon_io (4)/favicon.ico",
+        "/assets/images/favicon_io (4)/site.webmanifest",
+        "/assets/images/high-rise-buildings-during-night-time-photo-219692.jpg",
+        "/assets/images/new-logo2.png",
+        "/assets/images/output-onlinepngtools (1).png",
+        "/assets/images/pexels-jaroslav-nymburský-687811.jpg",
+        "/assets/images/pexels-maxime-francis-2246476.jpg",
+        "/favicon.png",
+        "/high-rise-buildings-during-night-time-photo-219692.ca4174f95bd8b270.jpg",
+        "/pexels-jaroslav-nymburský-687811.6b4b5d10d6388321.jpg",
+        "/pexels-maxime-francis-2246476.bb93f22063dbca3b.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/246.31f321a51a3fa0b6.js": "f4fd5fa729450a06a979b25859a01ffadc9555dc",
+    "/442.28cd23383b03d705.js": "3e0fe3e4b7e7cf16e0bfd642e4caa70348acea86",
+    "/647.cc80725a8d61449c.js": "40d4e3ce100dde8ef8120616772989221a4d3067",
+    "/734.992178b334ce711f.js": "8704678e5d163393ff39108305c6e5e25fdc4f1b",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/favicon-22.png": "a527d92f2fb30d663d7d575ee088302671306cc6",
+    "/assets/images/favicon.png": "31e64aedca3d840d8ddfdc22547c2c5f557233ec",
+    "/assets/images/favicon/android-chrome-192x192.png": "95d7cce1991d96ba0cac704e741f296beb3ca71a",
+    "/assets/images/favicon/android-chrome-512x512.png": "27a0897f60793d7ee0a474aa93d858ba6f957811",
+    "/assets/images/favicon/apple-touch-icon.png": "29f7092858acebb2f01741efd9db01144d827790",
+    "/assets/images/favicon/favicon-16x16.png": "bc58c15ad7e2ab9630f0b4726708c73ec1d32694",
+    "/assets/images/favicon/favicon-32x32.png": "31e64aedca3d840d8ddfdc22547c2c5f557233ec",
+    "/assets/images/favicon/favicon.ico": "b39cb60890cf8d7e2733d74142ca142e9ab0cfc7",
+    "/assets/images/favicon/site.webmanifest": "bf31baf91bdd2fcde24a45e3f2a1be33733c6f69",
+    "/assets/images/favicon_io (4)/android-chrome-192x192.png": "deee69e863b6ad357f6dcda738ba6f52c5f031b7",
+    "/assets/images/favicon_io (4)/android-chrome-512x512.png": "18544d2404890969cd00927afe00aafa356df256",
+    "/assets/images/favicon_io (4)/apple-touch-icon.png": "615e3444ce87b1c8e021cc99486bb802d77ad341",
+    "/assets/images/favicon_io (4)/favicon-16x16.png": "7354148e2db2413f83e2a61cf869cde342eb466f",
+    "/assets/images/favicon_io (4)/favicon-32x32.png": "5d864cc0c9563b680647de2c4fc745d29f1b9665",
+    "/assets/images/favicon_io (4)/favicon.ico": "9496fa94e12ec5eb2a51daa5317fe9d7ac03e40e",
+    "/assets/images/favicon_io (4)/site.webmanifest": "bf31baf91bdd2fcde24a45e3f2a1be33733c6f69",
+    "/assets/images/high-rise-buildings-during-night-time-photo-219692.jpg": "e2a86d610c8180c2858db9d2d10282a8b45bf0fb",
+    "/assets/images/new-logo2.png": "6e619a092889a5f9c274c6ea8dee405022f22476",
+    "/assets/images/output-onlinepngtools (1).png": "a99c98d7dd0a6a166fb94294e214b8a181eec31d",
+    "/assets/images/pexels-jaroslav-nymburský-687811.jpg": "9dff2c967ba8dc8ad7d34d31d13a7f89f32f5e63",
+    "/assets/images/pexels-maxime-francis-2246476.jpg": "3ba914fdb597e00c91d95a873b01d066137d4f9c",
+    "/favicon.png": "5d864cc0c9563b680647de2c4fc745d29f1b9665",
+    "/high-rise-buildings-during-night-time-photo-219692.ca4174f95bd8b270.jpg": "e2a86d610c8180c2858db9d2d10282a8b45bf0fb",
+    "/index.html": "c5205621816c6dff11d29e9e664dcb0a97aab435",
+    "/main.2f4958c911b86079.js": "c42b74faf85be53414d26e342037f2361e3bd967",
+    "/manifest.webmanifest": "3e2c7f25b3792fd6042fe07ce785bbb7bc7c4788",
+    "/pexels-jaroslav-nymburský-687811.6b4b5d10d6388321.jpg": "9dff2c967ba8dc8ad7d34d31d13a7f89f32f5e63",
+    "/pexels-maxime-francis-2246476.bb93f22063dbca3b.jpg": "3ba914fdb597e00c91d95a873b01d066137d4f9c",
+    "/polyfills.c05a4201037b04b3.js": "e06f151d77a1e16b67144e2d4d3255e14f63d71b",
+    "/runtime.5d853e4f7205bc82.js": "5c8a9b68aa8aaa52924465d603c42365ee30af9b",
+    "/styles.93c07fb2a0e874d9.css": "902d236a5d342807dc33c11b56c7f185ad2f501c"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
